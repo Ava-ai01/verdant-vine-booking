@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verdant &amp; Vine Catering — Request a Booking</title>
+  <meta name="description" content="Request a catering booking with Verdant & Vine — seasonal menus for weddings, corporate events, and private celebrations. Tell us about your event and we'll reply within 24 hours." />
+  <link rel="canonical" href="https://verdantandvine.example/booking" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Verdant &amp; Vine Catering — Request a Booking" />
+  <meta property="og:description" content="Seasonal catering for weddings, corporate events, and private celebrations. Request your booking — we reply within 24 hours." />
+  <meta property="og:image" content="static/assets/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CateringBusiness",
+    "name": "Verdant & Vine Catering",
+    "description": "Seasonal catering for weddings, corporate events, and private celebrations.",
+    "servesCuisine": ["Seasonal", "American", "Farm-to-table"],
+    "priceRange": "$$$",
+    "telephone": "+1-503-555-0148",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "418 Alder Street",
+      "addressLocality": "Portland",
+      "addressRegion": "OR",
+      "postalCode": "97204"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="siteNav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Verdant and Vine Catering — home">
+        <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 21c-5 0-8.5-3.2-8.5-7.5C3.5 8.6 8 4.5 20 3c-1 12-3.6 18-8 18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M12 21c.2-6 .8-11.5 2.6-16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M12 15.5c-2.5-.3-4.5-1.6-5.5-3.8M12 12c2.3-.4 4.1-1.7 5-3.7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">Verdant <em>&amp;</em> Vine</span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-phone" href="tel:+15035550148">(503) 555-0148</a>
+        <span class="nav-cta-note">Booking takes ~2 minutes</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ INTRO ============ -->
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="container intro-inner">
+        <p class="kicker kicker-center reveal"><span class="kicker-rule"></span>Weddings · Corporate · Private celebrations<span class="kicker-rule"></span></p>
+        <h1 id="intro-title" class="intro-title">
+          <span class="line"><span class="line-inner">Let's make your next</span></span>
+          <span class="line"><span class="line-inner">event <em>unforgettable.</em></span></span>
+        </h1>
+        <p class="lede intro-lede reveal">Tell us about your gathering in four quick steps. We'll reply within 24 hours with a tailored menu and quote — no obligation, no phone tag.</p>
+        <dl class="intro-stats reveal">
+          <div><dt>Events catered</dt><dd>480+</dd></div>
+          <div><dt>Guest rating</dt><dd>4.9</dd></div>
+          <div><dt>Years in service</dt><dd>12</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ BOOKING ============ -->
+    <section class="booking" aria-labelledby="booking-title">
+      <div class="container booking-grid">
+
+        <aside class="booking-aside reveal">
+          <figure class="aside-media">
+            <img src="{{ url_for('static', filename='assets/hero.jpg') }}"
+                 alt="A plated seasonal dish being served at a candlelit catered dinner" fetchpriority="high" />
+          </figure>
+          <div class="aside-card">
+            <h2 id="booking-title" class="aside-title">How it works</h2>
+            <ol class="next-steps">
+              <li><strong>Request</strong><span>You share your event details — about two minutes.</span></li>
+              <li><strong>Proposal</strong><span>We reply within 24 hours with a tailored menu and quote.</span></li>
+              <li><strong>Celebrate</strong><span>We handle the food, the service, and the details day-of.</span></li>
+            </ol>
+            <p class="aside-contact">Rather talk it through? <a href="tel:+15035550148">(503) 555-0148</a></p>
+          </div>
+        </aside>
+
+        <div class="booking-main">
+          <div class="form-card reveal" id="formCard">
+
+            <!-- Progress indicator -->
+            <nav class="steps-nav" aria-label="Booking progress">
+              <ol class="steps" id="stepsList">
+                <li class="step is-current" data-step="0">
+                  <span class="step-dot" aria-hidden="true"><span class="step-num">1</span><svg class="step-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span class="step-label">Event details</span>
+                </li>
+                <li class="step" data-step="1">
+                  <span class="step-dot" aria-hidden="true"><span class="step-num">2</span><svg class="step-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span class="step-label">Services</span>
+                </li>
+                <li class="step" data-step="2">
+                  <span class="step-dot" aria-hidden="true"><span class="step-num">3</span><svg class="step-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span class="step-label">Contact</span>
+                </li>
+                <li class="step" data-step="3">
+                  <span class="step-dot" aria-hidden="true"><span class="step-num">4</span><svg class="step-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span class="step-label">Review</span>
+                </li>
+              </ol>
+              <p class="steps-caption" id="stepsCaption" aria-live="polite">Step 1 of 4 — Event details</p>
+            </nav>
+
+            <form id="bookingForm" novalidate>
+              <div class="steps-viewport">
+
+                <!-- STEP 1 · Event details -->
+                <fieldset class="step-panel is-active" data-panel="0" aria-labelledby="step1-title">
+                  <legend class="sr-only">Step 1: Event details</legend>
+                  <h2 class="panel-title" id="step1-title" tabindex="-1">Tell us about <em>the event</em></h2>
+                  <p class="panel-sub">The basics — when, how many, and what you're celebrating.</p>
+
+                  <div class="field">
+                    <label for="eventDate">Event date</label>
+                    <input type="date" id="eventDate" name="event_date" autocomplete="off" />
+                    <p class="error" id="err-eventDate" role="alert"></p>
+                  </div>
+
+                  <div class="field">
+                    <label id="guestsLabel">Number of guests</label>
+                    <div class="stepper" role="group" aria-labelledby="guestsLabel">
+                      <button type="button" class="stepper-btn" id="guestsMinus" aria-label="Fewer guests">−</button>
+                      <output class="stepper-value" id="guestsValue" aria-live="polite">20</output>
+                      <button type="button" class="stepper-btn" id="guestsPlus" aria-label="More guests">+</button>
+                    </div>
+                    <input type="hidden" id="guests" name="guests" value="20" />
+                    <p class="error" id="err-guests" role="alert"></p>
+                    <p class="field-hint">Between 1 and 500 guests — for larger events, call us directly.</p>
+                  </div>
+
+                  <div class="field">
+                    <label for="eventType">Event type</label>
+                    <select id="eventType" name="event_type">
+                      <option value="">Choose one…</option>
+                      <option value="Wedding">Wedding</option>
+                      <option value="Corporate event">Corporate event</option>
+                      <option value="Private celebration">Private celebration</option>
+                      <option value="Holiday party">Holiday party</option>
+                      <option value="Fundraiser / nonprofit">Fundraiser / nonprofit</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <p class="error" id="err-eventType" role="alert"></p>
+                  </div>
+
+                  <div class="panel-actions">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" data-next>Continue</button>
+                  </div>
+                </fieldset>
+
+                <!-- STEP 2 · Services -->
+                <fieldset class="step-panel" data-panel="1" aria-labelledby="step2-title" hidden>
+                  <legend class="sr-only">Step 2: Services</legend>
+                  <h2 class="panel-title" id="step2-title" tabindex="-1">How should <em>we serve it?</em></h2>
+                  <p class="panel-sub">Pick the service style that fits your event — choose one.</p>
+
+                  <div class="menu-cards" role="radiogroup" aria-label="Menu style">
+                    <label class="menu-card">
+                      <input type="radio" name="menu_style" value="Plated" class="sr-only" />
+                      <span class="menu-card-body">
+                        <svg class="menu-card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16h16M12 16v-2.5M5.5 13.5a6.5 6.5 0 0 1 13 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="5" r="1.2" fill="currentColor"/></svg>
+                        <span class="menu-card-title">Plated</span>
+                        <span class="menu-card-desc">A coursed, sit-down dinner served tableside.</span>
+                      </span>
+                    </label>
+                    <label class="menu-card">
+                      <input type="radio" name="menu_style" value="Buffet" class="sr-only" />
+                      <span class="menu-card-body">
+                        <svg class="menu-card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16a8 8 0 0 1-16 0z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12V7.5M12 12V6M15 12V7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        <span class="menu-card-title">Buffet</span>
+                        <span class="menu-card-desc">Abundant seasonal spreads, help yourself.</span>
+                      </span>
+                    </label>
+                    <label class="menu-card">
+                      <input type="radio" name="menu_style" value="Stations" class="sr-only" />
+                      <span class="menu-card-body">
+                        <svg class="menu-card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1.5 3-2.5 4.5-2.5 8a4.5 4.5 0 0 0 9 0c0-1.6-.8-2.8-1.7-4-.4 1.2-1.1 1.7-2 1.7C15.6 6.8 13.5 5 12 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 20h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        <span class="menu-card-title">Stations</span>
+                        <span class="menu-card-desc">Interactive chef stations, made to order.</span>
+                      </span>
+                    </label>
+                    <label class="menu-card">
+                      <input type="radio" name="menu_style" value="Cocktail" class="sr-only" />
+                      <span class="menu-card-body">
+                        <svg class="menu-card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14l-7 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 13v6M8.5 20.5h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        <span class="menu-card-title">Cocktail</span>
+                        <span class="menu-card-desc">Passed hors d'oeuvres, mingling-style.</span>
+                      </span>
+                    </label>
+                  </div>
+                  <p class="error" id="err-menuStyle" role="alert"></p>
+
+                  <div class="field addons-field">
+                    <span class="field-label" id="addonsLabel">Add-ons <span class="optional">(optional)</span></span>
+                    <div class="addons" role="group" aria-labelledby="addonsLabel">
+                      <label class="addon"><input type="checkbox" name="addon" value="Bar service" /><span class="addon-box" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="addon-text">Bar service</span></label>
+                      <label class="addon"><input type="checkbox" name="addon" value="Rentals &amp; linens" /><span class="addon-box" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="addon-text">Rentals &amp; linens</span></label>
+                      <label class="addon"><input type="checkbox" name="addon" value="Dessert &amp; cake" /><span class="addon-box" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="addon-text">Dessert &amp; cake</span></label>
+                      <label class="addon"><input type="checkbox" name="addon" value="Late-night snack" /><span class="addon-box" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="addon-text">Late-night snack</span></label>
+                      <label class="addon"><input type="checkbox" name="addon" value="Floral styling" /><span class="addon-box" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="addon-text">Floral styling</span></label>
+                      <label class="addon"><input type="checkbox" name="addon" value="Event staffing" /><span class="addon-box" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="addon-text">Event staffing</span></label>
+                    </div>
+                  </div>
+
+                  <div class="panel-actions">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" data-next>Continue</button>
+                    <button type="button" class="back-link" data-back>← Back</button>
+                  </div>
+                </fieldset>
+
+                <!-- STEP 3 · Contact -->
+                <fieldset class="step-panel" data-panel="2" aria-labelledby="step3-title" hidden>
+                  <legend class="sr-only">Step 3: Contact details</legend>
+                  <h2 class="panel-title" id="step3-title" tabindex="-1">Where do we <em>send the proposal?</em></h2>
+                  <p class="panel-sub">We reply within 24 hours — usually much sooner.</p>
+
+                  <div class="field">
+                    <label for="fullName">Full name</label>
+                    <input type="text" id="fullName" name="name" autocomplete="name" placeholder="Jordan Ellis" />
+                    <p class="error" id="err-fullName" role="alert"></p>
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+                    <p class="error" id="err-email" role="alert"></p>
+                  </div>
+                  <div class="field">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="555-123-4567" />
+                    <p class="error" id="err-phone" role="alert"></p>
+                  </div>
+
+                  <div class="panel-actions">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" data-next>Continue</button>
+                    <button type="button" class="back-link" data-back>← Back</button>
+                  </div>
+                </fieldset>
+
+                <!-- STEP 4 · Review -->
+                <fieldset class="step-panel" data-panel="3" aria-labelledby="step4-title" hidden>
+                  <legend class="sr-only">Step 4: Review your request</legend>
+                  <h2 class="panel-title" id="step4-title" tabindex="-1">Does everything <em>look right?</em></h2>
+                  <p class="panel-sub">Give it a once-over — you can jump back to fix anything.</p>
+
+                  <dl class="review-list" id="reviewList"></dl>
+
+                  <div class="field">
+                    <label for="notes">Anything else we should know? <span class="optional">(optional)</span></label>
+                    <textarea id="notes" name="notes" rows="3" maxlength="1000" placeholder="Dietary restrictions, venue, theme, favorite cuisines…"></textarea>
+                    <p class="error" id="err-notes" role="alert"></p>
+                  </div>
+
+                  <div class="panel-actions">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="submitBtn">
+                      <span class="btn-label">Request booking</span>
+                      <span class="btn-spinner" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="back-link" data-back>← Back</button>
+                    <p class="form-error" id="formError" role="alert"></p>
+                  </div>
+                </fieldset>
+
+              </div>
+            </form>
+
+            <!-- SUCCESS -->
+            <div class="success" id="successPanel" hidden aria-labelledby="successTitle">
+              <svg class="success-check" viewBox="0 0 72 72" aria-hidden="true">
+                <circle class="check-ring" cx="36" cy="36" r="32" />
+                <path class="check-tick" d="M23 37.5l9 9L50 29" />
+              </svg>
+              <p class="kicker kicker-center"><span class="kicker-rule"></span>Request received<span class="kicker-rule"></span></p>
+              <h2 class="success-title" id="successTitle" tabindex="-1">You're on our <em>calendar.</em></h2>
+              <p class="success-message" id="successMessage"></p>
+              <div class="success-ref">
+                <span>Your booking reference</span>
+                <strong id="successRef"></strong>
+              </div>
+              <dl class="review-list review-summary" id="successSummary"></dl>
+              <div class="success-next">
+                <h3>What happens next</h3>
+                <ol>
+                  <li><strong>Within 24 hours</strong> — a tailored menu and quote lands in your inbox.</li>
+                  <li><strong>Refine together</strong> — we adjust dishes, dietary needs, and details with you.</li>
+                  <li><strong>Enjoy the day</strong> — our team handles setup, service, and breakdown.</li>
+                </ol>
+              </div>
+              <button type="button" class="btn btn-secondary btn-lg" id="bookAnother">Book another event</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-statement">Good food,<br /><em>gathered well.</em></p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-text">Verdant <em>&amp;</em> Vine</span>
+          <p class="footer-tag">Seasonal catering for weddings, corporate events, and private celebrations.</p>
+        </div>
+        <address class="footer-contact">
+          <a href="tel:+15035550148">(503) 555-0148</a>
+          <a href="mailto:hello@verdantandvine.example">hello@verdantandvine.example</a>
+          <span>418 Alder Street, Portland, OR</span>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Verdant &amp; Vine Catering. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
