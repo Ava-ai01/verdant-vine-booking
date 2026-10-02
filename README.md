@@ -1,6 +1,6 @@
 > **Live demo:** [https://verdant-vine-booking.vercel.app](https://verdant-vine-booking.vercel.app)
 
-![Demo screenshot](screenshots/desktop-hero.png)
+![Project cover — as shown on Upwork](screenshots/upwork-cover.png)
 
 ---
 
